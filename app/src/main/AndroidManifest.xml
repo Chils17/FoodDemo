@@ -9,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignActivity" />
-        <activity android:name=".ListActivity"></activity>
+        <activity android:name=".ui.SignActivity" />
+        <activity
+            android:name=".ui.ListActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".ui.CustomDrawerActivity" />
+        <activity android:name=".ui.ShopActivity" />
+        <activity android:name=".ui.ProductActivity"></activity>
     </application>
 
 </manifest>

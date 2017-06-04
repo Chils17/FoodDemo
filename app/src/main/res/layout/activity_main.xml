@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="10dp"
     android:orientation="vertical"
-    tools:context="com.example.chiragpatel.fooddemo.MainActivity">
+    tools:context="com.example.chiragpatel.fooddemo.ui.MainActivity">
 
     <Button
         android:id="@+id/btn_signin"
@@ -23,17 +23,17 @@
         android:text="Search" />
 
     <Button
-        android:id="@+id/btn_item"
+        android:id="@+id/btn_shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Food Item" />
+        android:text="Shop" />
 
     <Button
-        android:id="@+id/btn_hotel"
+        android:id="@+id/btn_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Hotel" />
+        android:text="Product" />
 
 </LinearLayout>

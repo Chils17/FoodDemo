@@ -1,6 +1,6 @@
-package com.example.chiragpatel.fooddemo;
+package com.example.chiragpatel.fooddemo.ui;
 
-import android.graphics.Color;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,9 +9,11 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.chiragpatel.fooddemo.R;
 import com.example.chiragpatel.fooddemo.adapter.MyAdapter;
 import com.example.chiragpatel.fooddemo.helper.DividerItemDecoration;
 import com.example.chiragpatel.fooddemo.model.User;
@@ -25,6 +27,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private MyAdapter myAdapter;
     private ArrayList<User> userList;
     private TextView emptyView;
+    private ImageView imgMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         setAdapter();
 
         clickListener();
+
     }
 
 
@@ -54,7 +58,19 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         mSearchView = (SearchView) findViewById(R.id.search_view);
         recyclerview = (RecyclerView) findViewById(R.id.recyclerView);
         emptyView = (TextView) findViewById(R.id.empty_view);
+        imgMenu = (ImageView) findViewById(R.id.imgMenu);
 
+    }
+
+    private void clickListener() {
+        imgMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getApplicationContext(),CustomDrawerActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void setAdapter() {
@@ -72,11 +88,6 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         recyclerview.setAdapter(myAdapter);
 
         setupSearchView();
-    }
-
-
-    private void clickListener() {
-
     }
 
     private void setEmployeeList() {
@@ -103,9 +114,14 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
 
     @Override
     public boolean onQueryTextSubmit(String text) {
-        myAdapter.filter(text);
+        return false;
+    }
 
-        Log.e("tag", "employeeAdapter.getItemCount(): " + myAdapter.getItemCount());
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        myAdapter.filter(newText);
+
+        Log.e("tag", "myAdapter.getItemCount(): " + myAdapter.getItemCount());
 
         if (myAdapter.getItemCount() == 0) {
             recyclerview.setVisibility(View.GONE);
@@ -118,8 +134,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     @Override
-    public boolean onQueryTextChange(String newText) {
-        return false;
+    public void onBackPressed() {
+        super.onBackPressed();
     }
-
 }

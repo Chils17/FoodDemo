@@ -64,6 +64,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                         user.getAddress().toLowerCase().contains(text.toLowerCase())) {
 
                     filterList.add(user);
+                    Log.e("tag", "filterList:" + filterList);
                 }
             }
         }

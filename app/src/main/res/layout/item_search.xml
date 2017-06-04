@@ -8,8 +8,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgView"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
         android:layout_margin="10dp"
         android:src="@mipmap/ic_launcher"
@@ -30,9 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="5dp"
-            android:textSize="24sp"
+            android:textSize="16sp"
             android:text="Name"
-            android:textStyle="bold"
             android:textColor="@color/colorRed" />
 
         <TextView
@@ -41,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:padding="5dp"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:text="Description"
             android:textColor="@android:color/black" />
     </LinearLayout>
@@ -51,7 +50,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:drawableRight="@drawable/ic_next"
-        android:padding="5dp"
         android:textSize="18sp"
         android:textStyle="bold"
         android:textColor="@color/colorRed" />
