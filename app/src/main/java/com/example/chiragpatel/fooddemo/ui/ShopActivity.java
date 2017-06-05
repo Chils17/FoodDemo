@@ -1,10 +1,13 @@
 package com.example.chiragpatel.fooddemo.ui;
 
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.chiragpatel.fooddemo.R;
@@ -18,6 +21,7 @@ public class ShopActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private ArrayList<Food> foodArrayList;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,7 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView txtTitle=(TextView)findViewById(R.id.txtTitle);
+        TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
 
         // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         //toolbar.setTitle("List Screen");
@@ -43,6 +47,23 @@ public class ShopActivity extends AppCompatActivity {
 
     private void init() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+
+        //Adding the tabs using addTab() method
+        tabLayout.addTab(tabLayout.newTab().setText("Latest"));
+        tabLayout.addTab(tabLayout.newTab().setText("Popular"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            RelativeLayout relativeLayout = (RelativeLayout)
+                    LayoutInflater.from(this).inflate(R.layout.tab_layout, tabLayout, false);
+
+            TextView tabTextView = (TextView) relativeLayout.findViewById(R.id.tab_title);
+            tabTextView.setText(tab.getText());
+            tab.setCustomView(relativeLayout);
+            tab.select();
+        }
 
     }
 
@@ -54,14 +75,14 @@ public class ShopActivity extends AppCompatActivity {
 
         foodArrayList = new ArrayList<>();
 
-        foodArrayList.add(new Food(R.drawable.img1,"Picnic Cupcakes", "$5"));
-        foodArrayList.add(new Food(R.drawable.img2,"Grill Barbecue", "$25"));
-        foodArrayList.add(new Food(R.drawable.img3,"Healthy Pasta", "$5"));
-        foodArrayList.add(new Food(R.drawable.img4,"Morning Breakfast", "$25"));
-        foodArrayList.add(new Food(R.drawable.img1,"Vada Pav", "$5"));
-        foodArrayList.add(new Food(R.drawable.img2,"Dabeli", "$25"));
-        foodArrayList.add(new Food(R.drawable.img3,"Pizza", "$5"));
-        foodArrayList.add(new Food(R.drawable.img4,"Burger", "$25"));
+        foodArrayList.add(new Food(R.drawable.img1, "Picnic Cupcakes", "$5"));
+        foodArrayList.add(new Food(R.drawable.img2, "Grill Barbecue", "$25"));
+        foodArrayList.add(new Food(R.drawable.img3, "Healthy Pasta", "$5"));
+        foodArrayList.add(new Food(R.drawable.img4, "Morning Breakfast", "$25"));
+        foodArrayList.add(new Food(R.drawable.img1, "Vada Pav", "$5"));
+        foodArrayList.add(new Food(R.drawable.img2, "Dabeli", "$25"));
+        foodArrayList.add(new Food(R.drawable.img3, "Pizza", "$5"));
+        foodArrayList.add(new Food(R.drawable.img4, "Burger", "$25"));
 
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(getApplicationContext(), foodArrayList);

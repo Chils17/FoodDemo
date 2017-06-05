@@ -22,36 +22,19 @@
         android:text="Food Items"
         android:textSize="20sp" />
 
-    <LinearLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_textview"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Latest "
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/rounded_textview"
-            android:gravity="center"
-            android:padding="10dp"
-            android:text="Popular "
-            android:textColor="@android:color/black"
-            android:textSize="20sp" />
-    </LinearLayout>
+        app:tabPaddingEnd="2dp"
+        app:tabPaddingStart="0dp"
+        app:tabIndicatorColor="@color/color_transparent"
+        app:tabSelectedTextColor="@color/colorYellow"
+        app:tabTextColor="@color/colorGrey"
+        android:background="@drawable/rounded_textview"
+        android:minHeight="?attr/actionBarSize" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
