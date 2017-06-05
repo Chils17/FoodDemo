@@ -1,6 +1,7 @@
 package com.example.chiragpatel.fooddemo.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -22,6 +23,8 @@ import java.util.List;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private List<User> userList, filterList;
     private Context context;
+    private String font = "Raleway-Bold.ttf";
+    private String regular = "Raleway-Light.ttf";
 
     public MyAdapter(Context context, List<User> userList) {
         this.userList = userList;
@@ -82,6 +85,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             txtName = (TextView) itemView.findViewById(R.id.txtName);
             txtAddress = (TextView) itemView.findViewById(R.id.txtAddress);
+
+            Typeface tf = Typeface.createFromAsset(context.getResources().getAssets(), font);
+            txtName.setTypeface(tf);
+
+            Typeface typeface = Typeface.createFromAsset(context.getResources().getAssets(), regular);
+            txtAddress.setTypeface(typeface);
+
         }
 
         public void setValues(User user) {

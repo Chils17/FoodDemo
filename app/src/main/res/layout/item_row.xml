@@ -24,13 +24,26 @@
             android:orientation="vertical"
             android:padding="4dp">
 
-            <ImageView
-                android:id="@+id/imgView"
-                android:layout_width="210dp"
-                android:layout_height="120dp"
-                android:layout_gravity="top|center"
-                android:adjustViewBounds="true"
-                android:src="@mipmap/ic_launcher" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imgView"
+                    android:layout_width="210dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="top|center"
+                    android:adjustViewBounds="true"
+                    android:src="@mipmap/ic_launcher" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/imgView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_heart" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textName"
@@ -52,6 +65,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/txtPriceName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -60,8 +74,7 @@
                     android:maxLines="1"
                     android:text="Price :"
                     android:textColor="@color/colorGrey"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/txtPrice"
@@ -73,8 +86,7 @@
                     android:maxLines="1"
                     android:text="$5"
                     android:textColor="@color/colorOrange"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 

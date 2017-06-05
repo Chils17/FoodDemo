@@ -20,7 +20,6 @@
         <activity
             android:name=".ui.ListActivity"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".ui.CustomDrawerActivity" />
         <activity android:name=".ui.ShopActivity" />
         <activity android:name=".ui.ProductActivity"></activity>
     </application>

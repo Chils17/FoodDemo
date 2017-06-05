@@ -1,6 +1,9 @@
 package com.example.chiragpatel.fooddemo.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +11,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,6 +33,11 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private ArrayList<User> userList;
     private TextView emptyView;
     private ImageView imgMenu;
+    private DrawerLayout mDrawerLayout;
+    private LinearLayout lv;
+    private ImageView imgClose;
+    private TextView txtTitle;
+    private String font = "Raleway-Regular.ttf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +45,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         setContentView(R.layout.activity_list);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView txtTitle=(TextView)findViewById(R.id.txtTitle);
+        txtTitle = (TextView) findViewById(R.id.txtTitle);
 
         // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         //toolbar.setTitle("List Screen");
@@ -47,28 +57,48 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
 
         init();
 
+        setTypeFace();
+
         setAdapter();
 
         clickListener();
 
     }
 
-
     private void init() {
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        lv = (LinearLayout) findViewById(R.id.lv);
         mSearchView = (SearchView) findViewById(R.id.search_view);
         recyclerview = (RecyclerView) findViewById(R.id.recyclerView);
         emptyView = (TextView) findViewById(R.id.empty_view);
         imgMenu = (ImageView) findViewById(R.id.imgMenu);
 
+        View headerView = LayoutInflater.from(getApplicationContext()).inflate(R.layout.main_layout, null, false);
+        lv.removeAllViews();
+        lv.addView(headerView);
+
+        imgClose = (ImageView) headerView.findViewById(R.id.imgClose);
+
     }
+
+    private void setTypeFace() {
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getResources().getAssets(), font);
+        txtTitle.setTypeface(tf);
+    }
+
 
     private void clickListener() {
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getApplicationContext(),CustomDrawerActivity.class);
-                startActivity(intent);
-                finish();
+                mDrawerLayout.openDrawer(Gravity.RIGHT);
+            }
+        });
+
+        imgClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDrawerLayout.closeDrawer(Gravity.RIGHT);
             }
         });
     }
@@ -96,8 +126,8 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         userList.add(new User("Chirag", "1345-Abrama, Navsari"));
         userList.add(new User("Krishna", "981-monal, madhay"));
         userList.add(new User("Sagar", "345-godhra, Godhra"));
-        userList.add(new User("Anis",  "135-shusan, vadodara"));
-        userList.add(new User("Ishan","451-makarpura, baroda"));
+        userList.add(new User("Anis", "135-shusan, vadodara"));
+        userList.add(new User("Ishan", "451-makarpura, baroda"));
         userList.add(new User("Vatsal", "545-subhanpura, baroda"));
         userList.add(new User("Gulam", "234-sakri, baroda"));
         userList.add(new User("Mehul", "675-vedch, bharuch"));

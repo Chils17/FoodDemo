@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="com.example.chiragpatel.fooddemo.ui.CustomDrawerActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -16,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorDarkYellow"
+            android:background="@color/color_transparent"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:theme="@style/AppTheme.AppBarOverlay">
 
@@ -42,10 +43,10 @@
                     android:textSize="24sp" />
 
                 <ImageView
-                    android:padding="10dp"
                     android:id="@+id/imgMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:padding="10dp"
                     android:src="@drawable/ic_menu" />
             </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.example.chiragpatel.fooddemo.ui;
 
+import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,10 @@ public class ShopActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Food> foodArrayList;
     private TabLayout tabLayout;
+    private String font = "Raleway-Regular.ttf";
+    private TextView txtTitle;
+    private TextView txtMain;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,7 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView txtTitle = (TextView) findViewById(R.id.txtTitle);
+        txtTitle = (TextView) findViewById(R.id.txtTitle);
 
         // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         //toolbar.setTitle("List Screen");
@@ -41,13 +46,16 @@ public class ShopActivity extends AppCompatActivity {
 
         init();
 
+        setTypeFace();
+
         setRecyclerView();
     }
-
 
     private void init() {
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        txtMain = (TextView) findViewById(R.id.txtMain);
+
 
         //Adding the tabs using addTab() method
         tabLayout.addTab(tabLayout.newTab().setText("Latest"));
@@ -66,6 +74,14 @@ public class ShopActivity extends AppCompatActivity {
         }
 
     }
+
+    private void setTypeFace() {
+        Typeface tf = Typeface.createFromAsset(getApplicationContext().getResources().getAssets(), font);
+        txtTitle.setTypeface(tf);
+        txtMain.setTypeface(tf);
+
+    }
+
 
     private void setRecyclerView() {
 
