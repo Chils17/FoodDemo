@@ -4,6 +4,7 @@ package com.example.chiragpatel.fooddemo.ui;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.example.chiragpatel.fooddemo.R;
@@ -21,6 +22,14 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        //toolbar.setTitle("List Screen");
+        setSupportActionBar(toolbar);
+        //toolbar.setTitleTextColor(Color.WHITE);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         init();
     }
