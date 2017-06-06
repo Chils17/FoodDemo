@@ -104,6 +104,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:background="@color/color_transparent"
+        android:fitsSystemWindows="true"
         android:orientation="vertical" />
 </android.support.v4.widget.DrawerLayout>
 
