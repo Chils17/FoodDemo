@@ -28,6 +28,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private Context context;
     private String font = "Raleway-Medium.ttf";
     private String regular = "Raleway-Regular.ttf";
+    private boolean isSelected = true;
 
     public RecyclerViewAdapter(Context context, ArrayList<Food> foodArrayList) {
         this.context = context;
@@ -54,6 +55,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
+        private ImageView img_like;
         private ImageView imgView;
         private TextView textName;
         private TextView txtPrice;
@@ -62,6 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public ItemViewHolder(View view) {
             super(view);
             imgView = (ImageView) view.findViewById(R.id.imgView);
+            img_like = (ImageView) view.findViewById(R.id.img_like);
             textName = (TextView) view.findViewById(R.id.textName);
             txtPrice = (TextView) view.findViewById(R.id.txtPrice);
             txtPriceName = (TextView) view.findViewById(R.id.txtPriceName);
@@ -71,6 +74,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
             Typeface typeface = Typeface.createFromAsset(context.getResources().getAssets(), regular);
             txtPriceName.setTypeface(typeface);
+
+            img_like.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (isSelected) {
+                        img_like.setImageResource(R.drawable.ic_like);
+                        isSelected = false;
+                    } else {
+                        img_like.setImageResource(R.drawable.ic_heart);
+                        isSelected = true;
+                    }
+                }
+            });
         }
     }
 }

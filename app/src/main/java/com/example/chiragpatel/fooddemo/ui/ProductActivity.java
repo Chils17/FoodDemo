@@ -6,6 +6,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.chiragpatel.fooddemo.R;
@@ -24,6 +27,10 @@ public class ProductActivity extends AppCompatActivity {
     private TextView txtFullDesc;
     private String font = "Raleway-Regular.ttf";
     private String medium = "Raleway-Medium.ttf";
+    private ImageButton leftNav;
+    private ImageButton rightNav;
+    private ImageView imgLike;
+    private boolean isSelected = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,8 @@ public class ProductActivity extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         init();
+
+        clickListener();
     }
 
     private void init() {
@@ -47,6 +56,10 @@ public class ProductActivity extends AppCompatActivity {
         txtPr = (TextView) findViewById(R.id.txtPr);
         txtDesc = (TextView) findViewById(R.id.txtDesc);
         txtFullDesc = (TextView) findViewById(R.id.txtFullDesc);
+
+        imgLike = (ImageView) findViewById(R.id.imgLike);
+        leftNav = (ImageButton) findViewById(R.id.left_nav);
+        rightNav = (ImageButton) findViewById(R.id.right_nav);
 
         txtTitle.setText("Product Items");
 
@@ -66,5 +79,43 @@ public class ProductActivity extends AppCompatActivity {
         CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
         viewPager.setAdapter(myCustomPagerAdapter);
         indicator.setViewPager(viewPager);
+    }
+
+    private void clickListener() {
+        leftNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int tab = viewPager.getCurrentItem();
+                if (tab > 0) {
+                    tab--;
+                    viewPager.setCurrentItem(tab);
+                } else if (tab == 0) {
+                    viewPager.setCurrentItem(tab);
+                }
+            }
+        });
+
+        rightNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int tab = viewPager.getCurrentItem();
+                tab++;
+                viewPager.setCurrentItem(tab);
+            }
+        });
+
+
+        imgLike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isSelected) {
+                    imgLike.setImageResource(R.drawable.ic_heart);
+                    isSelected = false;
+                } else {
+                    imgLike.setImageResource(R.drawable.ic_like);
+                    isSelected = true;
+                }
+            }
+        });
     }
 }
