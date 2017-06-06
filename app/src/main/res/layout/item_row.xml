@@ -30,7 +30,7 @@
 
                 <ImageView
                     android:id="@+id/imgView"
-                    android:layout_width="210dp"
+                    android:layout_width="220dp"
                     android:layout_height="120dp"
                     android:src="@mipmap/ic_launcher" />
 

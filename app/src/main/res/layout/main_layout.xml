@@ -42,6 +42,8 @@
             android:padding="10dp">
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -59,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="Profile"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -72,6 +74,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -84,7 +88,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="Inbox"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -94,6 +98,8 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -109,7 +115,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="Location"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -119,6 +125,8 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -134,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="FAQs"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -144,6 +152,8 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -159,7 +169,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="Settings"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -169,6 +179,8 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
+                android:clickable="true"
+                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
@@ -184,7 +196,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:text="Sign Out"
-                    android:textColor="#CF5628"
+                    android:textColor="@color/drawer_item_text_color"
                     android:textSize="14sp" />
             </LinearLayout>
 
