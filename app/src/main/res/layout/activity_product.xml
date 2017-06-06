@@ -127,6 +127,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_margin="2dp"
+                                android:background="@drawable/strike"
                                 android:gravity="center"
                                 android:maxLines="1"
                                 android:text="$10"
