@@ -38,6 +38,13 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private ImageView imgClose;
     private TextView txtTitle;
     private String font = "Raleway-Regular.ttf";
+    private String medium = "Raleway-Medium.ttf";
+    private TextView txtProfile;
+    private TextView txtInbox;
+    private TextView txtLocation;
+    private TextView txtFAQs;
+    private TextView txtSettings;
+    private TextView txtSign_out;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +85,25 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         lv.addView(headerView);
 
         imgClose = (ImageView) headerView.findViewById(R.id.imgClose);
-
+        txtProfile = (TextView) headerView.findViewById(R.id.txtProfile);
+        txtInbox = (TextView) headerView.findViewById(R.id.txtInbox);
+        txtLocation = (TextView) headerView.findViewById(R.id.txtLocation);
+        txtFAQs = (TextView) headerView.findViewById(R.id.txtFAQs);
+        txtSettings = (TextView) headerView.findViewById(R.id.txtSettings);
+        txtSign_out = (TextView) headerView.findViewById(R.id.txtSign_out);
     }
 
     private void setTypeFace() {
         Typeface tf = Typeface.createFromAsset(getApplicationContext().getResources().getAssets(), font);
         txtTitle.setTypeface(tf);
+
+        Typeface typeface = Typeface.createFromAsset(getApplicationContext().getResources().getAssets(), medium);
+        txtProfile.setTypeface(typeface);
+        txtInbox.setTypeface(typeface);
+        txtLocation.setTypeface(typeface);
+        txtFAQs.setTypeface(typeface);
+        txtSettings.setTypeface(typeface);
+        txtSign_out.setTypeface(typeface);
     }
 
 

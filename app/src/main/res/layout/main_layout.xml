@@ -56,7 +56,7 @@
                     android:src="@drawable/ic_profile" />
 
                 <TextView
-                    android:id="@+id/txtHome"
+                    android:id="@+id/txtProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -84,6 +84,7 @@
                     android:src="@drawable/ic_mail" />
 
                 <TextView
+                    android:id="@+id/txtInbox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -111,6 +112,7 @@
                     android:src="@drawable/ic_location_on" />
 
                 <TextView
+                    android:id="@+id/txtLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -138,6 +140,7 @@
                     android:src="@drawable/ic_question" />
 
                 <TextView
+                    android:id="@+id/txtFAQs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -165,6 +168,7 @@
                     android:src="@drawable/ic_settings" />
 
                 <TextView
+                    android:id="@+id/txtSettings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -192,6 +196,7 @@
                     android:src="@drawable/ic_signout" />
 
                 <TextView
+                    android:id="@+id/txtSign_out"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
