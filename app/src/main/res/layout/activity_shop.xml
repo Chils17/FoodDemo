@@ -9,16 +9,16 @@
     android:orientation="vertical"
     tools:context="com.example.chiragpatel.fooddemo.ui.ShopActivity">
 
+    <include
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorWhiteSmoke"
         android:orientation="vertical">
-
-        <include
-            layout="@layout/toolbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
 
         <TextView
             android:id="@+id/txtMain"

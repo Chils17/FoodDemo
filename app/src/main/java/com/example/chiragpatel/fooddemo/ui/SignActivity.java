@@ -12,7 +12,7 @@ public class SignActivity extends AppCompatActivity {
 
     private TextView txtTitle;
     private TextView txtUi;
-    private Button btn_login;
+    private TextView btn_login;
     private TextView txtForgetPassword;
     private TextView txtLoginWith;
     private TextView txtFb;
@@ -32,7 +32,7 @@ public class SignActivity extends AppCompatActivity {
     private void init() {
         txtTitle=(TextView)findViewById(R.id.txtTitle);
         txtUi=(TextView)findViewById(R.id.txtUi);
-        btn_login=(Button)findViewById(R.id.btn_login);
+        btn_login=(TextView)findViewById(R.id.btn_login);
         txtForgetPassword=(TextView)findViewById(R.id.txtForgetPassword);
         txtLoginWith=(TextView)findViewById(R.id.txtLoginWith);
         txtFb=(TextView)findViewById(R.id.txtFb);
