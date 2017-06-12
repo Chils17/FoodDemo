@@ -30,7 +30,8 @@
 
                 <ImageView
                     android:id="@+id/imgView"
-                    android:layout_width="220dp"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
                     android:layout_height="120dp"
                     android:src="@mipmap/ic_launcher" />
 
@@ -39,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignRight="@+id/imgView"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="2dp"
                     android:src="@drawable/ic_heart" />
 
                 <TextView

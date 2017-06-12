@@ -1,5 +1,6 @@
 package com.example.chiragpatel.fooddemo.ui;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -26,6 +29,7 @@ public class ShopActivity extends AppCompatActivity {
     private String font = "Raleway-Regular.ttf";
     private TextView txtTitle;
     private TextView txtMain;
+    private ImageView imgBack;
 
 
     @Override
@@ -48,14 +52,16 @@ public class ShopActivity extends AppCompatActivity {
 
         setTypeFace();
 
+        actionListener();
+
         setRecyclerView();
     }
 
     private void init() {
+        imgBack = (ImageView)findViewById(R.id.imgBack);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         txtMain = (TextView) findViewById(R.id.txtMain);
-
 
         //Adding the tabs using addTab() method
         tabLayout.addTab(tabLayout.newTab().setText("Latest"));
@@ -80,6 +86,17 @@ public class ShopActivity extends AppCompatActivity {
         txtTitle.setTypeface(tf);
         txtMain.setTypeface(tf);
 
+    }
+
+    private void actionListener() {
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 

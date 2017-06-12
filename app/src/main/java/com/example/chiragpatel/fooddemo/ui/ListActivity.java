@@ -45,6 +45,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     private TextView txtFAQs;
     private TextView txtSettings;
     private TextView txtSign_out;
+    private ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     private void init() {
+        imgBack = (ImageView) findViewById(R.id.imgBack);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         lv = (LinearLayout) findViewById(R.id.lv);
         mSearchView = (SearchView) findViewById(R.id.search_view);
@@ -111,14 +113,23 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
         imgMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDrawerLayout.openDrawer(Gravity.RIGHT);
+                mDrawerLayout.openDrawer(Gravity.END);
             }
         });
 
         imgClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDrawerLayout.closeDrawer(Gravity.RIGHT);
+                mDrawerLayout.closeDrawer(Gravity.END);
+            }
+        });
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

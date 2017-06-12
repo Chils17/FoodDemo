@@ -24,7 +24,7 @@ import static com.example.chiragpatel.fooddemo.R.id.txtName;
  */
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private ArrayList<Food> foodArrayList;
+    private static ArrayList<Food> foodArrayList;
     private Context context;
     private String font = "Raleway-Medium.ttf";
     private String regular = "Raleway-Regular.ttf";

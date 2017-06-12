@@ -1,6 +1,7 @@
 package com.example.chiragpatel.fooddemo.ui;
 
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class ProductActivity extends AppCompatActivity {
     private ImageButton rightNav;
     private ImageView imgLike;
     private boolean isSelected = false;
+    private ImageView imgBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void init() {
+        imgBack = (ImageView) findViewById(R.id.imgBack);
         txtTitle = (TextView) findViewById(R.id.txtTitle);
         txtItemName = (TextView) findViewById(R.id.txtItemName);
         txtPr = (TextView) findViewById(R.id.txtPr);
@@ -115,6 +118,15 @@ public class ProductActivity extends AppCompatActivity {
                     imgLike.setImageResource(R.drawable.ic_like);
                     isSelected = true;
                 }
+            }
+        });
+
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
