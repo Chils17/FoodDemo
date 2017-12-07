@@ -42,10 +42,10 @@
             android:padding="10dp">
 
             <LinearLayout
-                android:clickable="true"
-                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -73,9 +73,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:clickable="true"
                 android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
+                android:gravity="center_vertical"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -99,10 +99,10 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
-                android:clickable="true"
-                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -127,10 +127,10 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
-                android:clickable="true"
-                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -155,10 +155,10 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
-                android:clickable="true"
-                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -183,10 +183,10 @@
                 android:background="#ffdb82" />
 
             <LinearLayout
-                android:clickable="true"
-                android:background="@drawable/drawer_item_selector"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawer_item_selector"
+                android:clickable="true"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 

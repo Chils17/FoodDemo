@@ -135,7 +135,6 @@ public class ListActivity extends AppCompatActivity implements SearchView.OnQuer
     }
 
     private void setAdapter() {
-
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerview.setLayoutManager(layoutManager);
         recyclerview.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
